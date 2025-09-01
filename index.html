@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doodle Duo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="public/css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  </head>
+  <body>
+    <h1 class="app-title">Doodle Duo!</h1>
+    <p class="tagline">Your Turn to Doodle</p>
+
+    <div class="img-container">
+      <img
+        src="public/img/Group5.png"
+        alt="A child doodling with a pencil on paper"
+      />
+    </div>
+
+    <div class="buttons">
+      <button class="btn" id="newRoom">New Room</button>
+      <button class="btn" id="joinRoom">Join Room</button>
+      <input type="text" id="roomInput" placeholder="Enter your 4 letter code" maxlength="4">
+    </div>
+
+   <script src="public/js/auth.js"></script>
+  <script  src="public/js/index.js"></script>
+  </body>
+</html>

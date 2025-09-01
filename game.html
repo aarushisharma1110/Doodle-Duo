@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Doodle Duo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="public/css/game.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-info">
+    <div>Room: <span id="currentRoomCode"></span></div>
+    <div>Round: <span id="currentRound">1</span>/3</div>
+    <div><span id="player1Name">Player 1</span>: <span id="player1Score">0</span></div>
+    <div><span id="player2Name">Player 2</span>: <span id="player2Score">0</span></div>
+    <div id="timer">Time: 60s</div>
+    <div id="playerStatus"></div>
+</div>
+      <div class="drawing-area">
+        <div id="wordToDraw" class="word-to-draw"></div>
+        <canvas id="drawingCanvas" width="600" height="400"></canvas>
+
+        <!-- Word choice popup -->
+        <div id="wordChoicePopup" class="popup hidden">
+          <div class="popup-content">
+            <h3>Choose a word to draw:</h3>
+            <div class="word-options">
+              <button class="word-option" id="wordOption1"></button>
+              <button class="word-option" id="wordOption2"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Round result popup -->
+        <div id="roundResultPopup" class="popup hidden">
+          <div class="popup-content">
+            <h3 id="roundResultTitle"></h3>
+            <p id="roundResultMessage"></p>
+            <div class="score-update">
+              <p>Player 1: +<span id="p1Points">0</span> points</p>
+              <p>Player 2: +<span id="p2Points">0</span> points</p>
+            </div>
+            <div class="total-scores">
+              <p>Player 1 Total: <span id="p1ScoreDisplay">0</span></p>
+              <p>Player 2 Total: <span id="p2ScoreDisplay">0</span></p>
+            </div>
+            <button id="continueButton">Continue</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tools" id="drawingTools">
+        <input type="color" id="colorPicker" value="#000000" />
+        <input type="range" id="brushSize" min="1" max="20" value="5" />
+        <button id="clearCanvas">Clear</button>
+        <button id="undo">Undo</button>
+      </div>
+      <div class="chat-box">
+        <div id="messages" class="messages-container"></div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="MessageInput"
+            placeholder="Type your guess..."
+          />
+          <button id="sendMessage">Send</button>
+        </div>
+      </div>
+      <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+          <div class="spinner"></div>
+          <p>Connecting to game...</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="public/js/auth.js"></script>
+    <script src="public/js/game.js"></script>
+  </body>
+</html>

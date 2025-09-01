@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff5e0;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(#ffd166 1px, transparent 1px);
+  background-size: 20px 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.app-title {
+  font-family: "Rampart One", cursive;
+  font-size: 4.5rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+
+.tagline {
+  font-family: cursive, sans-serif;
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.img-container {
+  margin: 2rem 0;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.1));
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background-color: #4ecdc4;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #3da8a0;
+  min-width: 180px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 #3da8a0;
+  background-color: #5eddd4;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 #3da8a0;
+}
+
+#newRoom {
+  background-color: #ff6b6b;
+  box-shadow: 0 4px 0 #e05555;
+}
+
+#newRoom:hover {
+  background-color: #ff7b7b;
+  box-shadow: 0 6px 0 #e05555;
+}
+
+#newRoom:active {
+  box-shadow: 0 2px 0 #e05555;
+}
+
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 3rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
